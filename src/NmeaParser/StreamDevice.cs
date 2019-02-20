@@ -65,7 +65,6 @@ namespace NmeaParser
 			base.Dispose(disposing);
 			if (m_stream != null)
 				m_stream.Dispose();
-			m_stream = null;
 		}
 
         /// <inheritdoc />

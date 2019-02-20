@@ -49,8 +49,12 @@ namespace NmeaParser.Nmea.Gps
                 MagneticBearing = double.NaN;
             if (message.Length > 4 && !string.IsNullOrEmpty(message[4]))
                 DestinationId = message[4];
+            else
+                DestinationId = string.Empty;
             if (message.Length > 5 && !string.IsNullOrEmpty(message[5]))
                 OriginId = message[5];
+            else
+                OriginId = string.Empty;
         }
         /// <summary>
         /// True Bearing from start to destination

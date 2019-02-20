@@ -29,7 +29,7 @@ namespace NmeaParser
 	/// </summary>
 	public abstract class BufferedStreamDevice : NmeaDevice
 	{
-		BufferedStream m_stream;
+		BufferedStream? m_stream;
 		int m_readSpeed;
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BufferedStreamDevice"/> class.
@@ -72,7 +72,7 @@ namespace NmeaParser
 		/// <returns></returns>
 		protected override Task CloseStreamAsync(System.IO.Stream stream)
 		{
-			m_stream.Dispose();
+			m_stream?.Dispose();
 			return Task.FromResult(true);
 		}
 
@@ -84,8 +84,8 @@ namespace NmeaParser
 			private byte[] m_buffer = new byte[0];
 			private System.Threading.Timer m_timer;
 			private object lockObj = new object();
-			private string groupToken = null;
-			private string lastLineRead = null;
+			private string? groupToken = null;
+			private string? lastLineRead = null;
 			/// <summary>
 			/// Initializes a new instance of the <see cref="BufferedStream"/> class.
 			/// </summary>

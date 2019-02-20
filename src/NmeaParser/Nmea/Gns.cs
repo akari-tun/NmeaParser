@@ -152,6 +152,8 @@ namespace NmeaParser.Nmea
                 TimeSinceLastDgpsUpdate = TimeSpan.MaxValue;
             if (message[11].Length > 0)
                 DgpsStationId = message[11];
+            else
+                DgpsStationId = string.Empty;
 
             if (message.Length > 12)
             {

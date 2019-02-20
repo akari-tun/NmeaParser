@@ -29,6 +29,8 @@
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <Product>NMEA Parser - .NET Standard 1.4</Product>
+	  <LangVersion>8.0</LangVersion>
+    <NullableContextOptions>enable</NullableContextOptions>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'net451'">
